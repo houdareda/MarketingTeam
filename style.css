@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Cairo", sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    text-align: center;
+
+}
+
+.head_sec{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    padding: 80px 0 10px;
+    text-align: center;
+    background: linear-gradient(to left ,#281d32cd,#281d32cd),url(img/header.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+.head_sec img{
+    width: 120px;
+}
+
+
+.block1-btn {
+    background: #A376B9;
+    color: #fff;
+    width: 100%;
+    font-size: 22px;
+    line-height: 1.5;
+    border-radius: 10px;
+    position: relative;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+body{
+    height: 400vh;
+    background: #fff7ff;
+}
+.form {
+    position: relative;
+    z-index: 10;
+    background: #fff7ff;
+    padding: 25px 20px;
+    margin: 0 auto;
+    margin-top: 200px;
+
+}
+.form-control-input {
+    width: 100%;
+    margin: auto;
+    font-size: 18px;
+    color: #242424;
+    resize: none;
+    height: auto;
+    line-height: 2;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 3px 10px;
+    border: 1px solid #747474;
+    outline: none;
+    margin-top: 5px;
+    font-size: 14px;
+}
+.form-control-input::-webkit-input-placeholder {
+    color: #747474;
+    font-size: 14px;
+}
+.form-control-input:focus{
+    border-color: #A376B9;
+}
+
+.form .form-group {
+    margin-bottom: 40px;
+    position: relative;
+    text-align: right;
+}
+.form .form-group i{
+    color: #A376B9;
+    font-size: 18px;
+    margin-left: 5px;
+}
+.form .form-group label{
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.inputContainer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+  }
+  
+  .inputContainer.show {
+    max-height: 200px; /* الارتفاع الكافي لاحتواء المدخلات */
+    opacity: 1;
+  }
+  .show_div{
+    padding: 00px 0 20px;
+    text-align: right;
+
+}
+
+  .show_div label{
+    font-size: 18px;
+    font-weight: 600;
+    border: 1px solid #A376B9;
+    padding: 2px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: max-content;
+  }
+  .show_div label i{
+    color: #A376B9;
+    font-size: 18px;
+    margin-right: 8px;
+  }
+
+  #eror{
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .conta2{
+    padding: 40px 20px;
+    height: 100vh;
+    background: #a4a4a4;
+    color: #fff;
+
+    background:linear-gradient(#000000a5,#000000a5 ), url(img/header.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+.conta2 img{
+    width: 80px;
+    margin-bottom: 30px;
+}
+
+.conta2 img.logo222{
+    width: 200px;
+    margin-top: 40px;
+}
+
