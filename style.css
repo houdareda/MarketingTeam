@@ -162,6 +162,12 @@ select{
 input {
     font-size: 18px !important;
   }
+
+  button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
 @media screen and (max-width: 768px) {
     input {
@@ -196,9 +202,9 @@ input {
 
 
   .dot-spinner {
-    --uib-size: 2.8rem;
+    --uib-size: 2.5rem;
     --uib-speed: .9s;
-    --uib-color: #183153;
+    --uib-color: #ffffff;
     position: relative;
     display: flex;
     align-items: center;
