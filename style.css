@@ -315,3 +315,11 @@ input {
     border-radius: 30px;
     font-size: 14px;
   }
+
+  @media (min-width:700px) {
+    form{
+      max-width: 500px;
+      border: 2px solid #A376B9;
+      border-radius: 20px;
+    }
+  }
