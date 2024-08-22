@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>Marketing Team</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="icon" href="img/favicon.png" />
+    <link rel="icon" href="img/favicon.png" type="image/x-icon"/>
+
     <!-- file css -->
     <link rel="stylesheet" href="style.css">
 
@@ -14,111 +15,250 @@
 
 <body>
 
-  <input type="text" placeholder="test hena">
 
     <div class="head_sec">
         <img src="img/favicon.png" alt="">
     </div>
     <form name="contact-form"
-        action="https://script.google.com/macros/s/AKfycbzgdteEYdJzMQKPzaa28Jp9S5cgyXWeQNZBn1w5pWJUccQ7kJUA66AC7RaDF2CEDYVH/exec"
+        action="https://script.google.com/macros/s/AKfycbzeUt4evsgLprjFmoUUBmOmn00YYxT7PWSqlcmac_xsPRuQ4G1GNWh7EhUkLFBRa40ZJg/exec"
         id="quizForm" class="form" method="post">
         <div class="container">
            
 
             <div class="form-group">
 
-                <label for="name"><i class="fa-solid fa-user"></i>اختر اسم الأيجنت</label>
-                <input list="nameList" id="name" name="Name Agent"  class="form-control form-control-input name_ag_inp" placeholder="الاسم" required />
+                <label for="name"><i class="fa-solid fa-user"></i> Agent Name </label>
                 
-                <datalist id="nameList" class="name_Agent1">
-         
-                </datalist>
+
+
+
+<select id="name" name="Agent Name" class="form-control form-control-input name_ag_inp  name_Agent1" required>
+  <option value="" disabled selected> Agent Name</option>
+
+</select>
+
        
             </div>
 
             <div class="form-group">
-                <label for="datee"><i class="fa-solid fa-calendar-days"></i> تاريخ اليوم </label>
+                <label for="datee"><i class="fa-solid fa-calendar-days"></i> تاريخ اليوم </label><br>
                 <input type="date" id="datee" name="date"  class="form-control form-control-input" required />
             </div>
 
 
             <div class="form-group">
-                
-                <label><i class="fa-solid fa-money-bill-1-wave"></i> مصروفات اليوم كلها</label>
-                <input type="number" maxlength="6" name="Total expenses"  class="form-control form-control-input"  placeholder="توتال مصاريف اليوم"/>
-       
+                <label><i class="fa-solid fa-money-bill-1-wave"></i> اجمالي مصروفات المحفظة</label>
+                <input type="number" maxlength="6" name="Total expenses"  class="form-control form-control-input"  placeholder="  اجمالي مصروفات المحفظة"/>
             </div>
 
 
+            <div class="form-group">
+                <label for="Markt-1"><i class="fa-solid fa-sack-dollar"></i>  مصروفات  اعلانات Marketing 1 </label>
+                <input type="number" id="Markt-1" name="expenses Markt-1"   maxlength="6" class="form-control form-control-input tr_color" placeholder="المصروفات الاعلانية Marketing-1                "  />
+            </div>
+
 
             <div class="form-group">
-                
+                <label for="Markt-2"><i class="fa-solid fa-sack-dollar"></i>     مصروفات  اعلانات Marketing 2 </label>
+                <input type="number" id="Markt-2" name="expenses Markt-2"   maxlength="6"  class="form-control form-control-input pr_color" placeholder="المصروفات الاعلانية Marketing-2"  />
+            </div>
+
+            <div class="form-group">
                 <label for="masrofat_P"><i class="fa-solid fa-wallet"></i>  مصروفات  شخصية </label>
                 <input type="number" name="Personal expenses"  maxlength="6" class="form-control form-control-input" placeholder="المصروفات الشخصية" />
-                
-       
-            </div>
-
-            <div class="form-group">
-                
-                <label for="Markt-1"><i class="fa-solid fa-sack-dollar"></i>  مصروفات  اعلانات Markting 1 </label>
-                <input type="number" id="Markt-1" name="expenses Markt-1"   maxlength="6" class="form-control form-control-input" placeholder="المصروفات اعلانية"  />
-                
-       
             </div>
 
 
-            <div class="form-group">
-                
-                <label for="Markt-2"><i class="fa-solid fa-sack-dollar"></i>     مصروفات  اعلانات Markting 2 </label>
-                <input type="number" id="Markt-2" name="expenses Markt-2"   maxlength="6"  class="form-control form-control-input" placeholder="المصروفات اعلانية"  />
-                
-       
-            </div>
 
 
-    
 
 
-         
+            <!----------  bigg ------------ dev 111111111111111111 -->
 
 
             <div class="show_div">
                 <label>
-                  <input type="checkbox" id="toggleCheckbox" onclick="toggleInputs()"> 
+                  <input type="checkbox" id="toggleCheckbox" onclick="toggleInputs('inputContainer','toggleCheckbox' , 'Recipient' , 'RecipientMony')"> 
                   <i class="fa-solid fa-money-bill-transfer"></i>
-                  تحويل لموظف اخر  
+                  عملية تحويل اموال الي Agent اخر
                 </label>
               </div>
               
+
+
               
               <div id="inputContainer" class="hidden inputContainer">
 
+                <div class="form-group">
+                    <label for="Recipient"><i class="fa-solid fa-user-pen"></i> اختر اسم Agent الذي تم التحويل له  </label>
+                    <select id="Recipient" name="Recipient Name" class="form-control form-control-input   name_Agent1">
+                        <option value="" disabled selected> Agent Name</option>
+                      
+                      </select>
+
+
+                </div>
+
 
                 <div class="form-group">
-                
-                    <label for="Recipient"><i class="fa-solid fa-user-pen"></i> اختر اسم الموظف المحول له </label>
-                    <input list="suggestions2" id="Recipient" name="Recipient Name"  class="form-control form-control-input" placeholder="اسم الموظف المحول له"  />
-                    
-                    <datalist id="suggestions2" class="name_Agent2">
-        
-                    </datalist>
-           
-           
+                    <label for="RecipientMony"><i class="fa-solid fa-money-bill-trend-up"></i>  المبلغ الذي تم تحويله </label>
+                    <input type="number" id="RecipientMony" maxlength="6" name="Recipient Mony"  class="form-control form-control-input" placeholder="ادخل المبلغ الذي تم تحويله   "  />
                 </div>
 
 
 
+                <!-- div 2222222222222222222222 -->
 
-                <div class="form-group">
-                
-                    <label for="RecipientMony"><i class="fa-solid fa-money-bill-trend-up"></i>  المبلغ الذي تريد تحويله للموظف</label>
-                    <input list="number" id="RecipientMony" maxlength="6" name="Recipient Mony"  class="form-control form-control-input" placeholder="ادخل المبلغ المحول   "  />
-           
-                </div>
+                <div class="show_div">
+                    <label>
+                      <input type="checkbox" id="toggleCheckbox2" onclick="toggleInputs('inputContainer2','toggleCheckbox2','Recipient2','RecipientMony2')"> 
+                      <i class="fa-solid fa-money-bill-transfer"></i> 2 
+                       عملية تحويل اموال الي Agent اخر
+                    </label>
+                  </div>
+
                 
               </div>
+
+
+
+
+
+
+
               
+              <div id="inputContainer2" class="hidden inputContainer">
+
+                <div class="form-group">
+                    <label for="Recipient2"><i class="fa-solid fa-user-pen"></i> اختر اسم Agent الذي تم التحويل له  </label>
+                    <select id="Recipient2" name="Recipient Name 2" class="form-control form-control-input   name_Agent1">
+                        <option value="" disabled selected> Agent Name</option>
+                      
+                      </select>
+
+                   
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="RecipientMony2"><i class="fa-solid fa-money-bill-trend-up"></i>  المبلغ الذي تم تحويله </label>
+                    <input type="number" id="RecipientMony2" maxlength="6" name="Recipient Mony 2"  class="form-control form-control-input" placeholder="ادخل المبلغ الذي تم تحويله   "  />
+                </div>
+
+
+
+                <!-- div 3333333333333333333333 -->
+
+                    <div class="show_div">
+                    <label>
+                      <input type="checkbox" id="toggleCheckbox3" onclick="toggleInputs('inputContainer3','toggleCheckbox3','Recipient3','RecipientMony3')"> 
+                      <i class="fa-solid fa-money-bill-transfer"></i> 3 
+                      عملية تحويل اموال الي Agent اخر
+                    </label>
+                  </div>
+
+
+              </div>
+              
+
+
+              
+              <div id="inputContainer3" class="hidden inputContainer">
+
+                <div class="form-group">
+                    <label for="Recipient3"><i class="fa-solid fa-user-pen"></i> اختر اسم Agent الذي تم التحويل له  </label>
+                    <select id="Recipient3" name="Recipient Name 3" class="form-control form-control-input   name_Agent1">
+                        <option value="" disabled selected> Agent Name</option>
+                      
+                      </select>
+                   
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="RecipientMony3"><i class="fa-solid fa-money-bill-trend-up"></i>  المبلغ الذي تم تحويله </label>
+                    <input type="number" id="RecipientMony3" maxlength="6" name="Recipient Mony 3"  class="form-control form-control-input" placeholder="ادخل المبلغ الذي تم تحويله   "  />
+                </div>
+
+
+
+                <!-- div 444444444444444444444444 -->
+
+                 <div class="show_div">
+                    <label>
+                      <input type="checkbox" id="toggleCheckbox4" onclick="toggleInputs('inputContainer4','toggleCheckbox4','Recipient4','RecipientMony4')"> 
+                      <i class="fa-solid fa-money-bill-transfer"></i> 4 
+                      عملية تحويل اموال الي Agent اخر
+                    </label>
+                  </div>
+                  
+                
+              </div>
+
+
+
+
+              <div id="inputContainer4" class="hidden inputContainer">
+
+                <div class="form-group">
+                    <label for="Recipient4"><i class="fa-solid fa-user-pen"></i>   اختر اسم Agent الذي تم التحويل له  </label>            
+
+                    <select id="Recipient4" name="Recipient Name 4" class="form-control form-control-input   name_Agent1">
+                        <option value="" disabled selected> Agent Name</option>
+                      
+                      </select>
+
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="RecipientMony4"><i class="fa-solid fa-money-bill-trend-up"></i>  المبلغ الذي تم تحويله </label>
+                    <input type="number" id="RecipientMony4" maxlength="6" name="Recipient Mony 4"  class="form-control form-control-input" placeholder="ادخل المبلغ الذي تم تحويله   "  />
+                </div>
+
+
+
+                <!-- div 55555555555555555555 -->
+
+                <div class="show_div">
+                    <label>
+                      <input type="checkbox" id="toggleCheckbox5" onclick="toggleInputs('inputContainer5','toggleCheckbox5','Recipient5','RecipientMony5')"> 
+                      <i class="fa-solid fa-money-bill-transfer"></i> 5 
+                      عملية تحويل اموال الي Agent اخر
+                    </label>
+                  </div>
+
+                
+              </div>
+
+
+
+              <div id="inputContainer5" class="hidden inputContainer">
+
+                <div class="form-group">
+
+                    <label for="Recipient5"><i class="fa-solid fa-user-pen"></i> اختر اسم Agent الذي تم التحويل له  </label>
+                    <select id="Recipient5" name="Recipient Name 5" class="form-control form-control-input   name_Agent1">
+                        <option value="" disabled selected> Agent Name</option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="RecipientMony"><i class="fa-solid fa-money-bill-trend-up"></i>  المبلغ الذي تم تحويله </label>
+                    <input type="number" id="RecipientMony5" maxlength="6" name="Recipient Mony 5"  class="form-control form-control-input" placeholder="ادخل المبلغ الذي تم تحويله   "  />
+                </div>
+
+
+                
+              </div>
+
+
+
 
 
 
@@ -128,21 +268,21 @@
 
               <div class="show_div">
                 <label>
-                  <input type="checkbox" id="toggleCheckbox2" onclick="toggleInputs2()"> 
+                  <input type="checkbox" id="toggleCheckbox6" onclick="toggleInputs('inputContainer6','toggleCheckbox6','Requestedamount','Waleet')"> 
                   <i class="fa-solid fa-hand-holding-dollar"></i>
-                 طلب فلوس
+                  طلب اموال
                 </label>
               </div>
               
               
-              <div id="inputContainer2" class="hidden inputContainer">
+              <div id="inputContainer6" class="hidden inputContainer">
                 
 
 
                 <div class="form-group">
                 
                     <label for="Requestedamount"><i class="fa-solid fa-dollar-sign"></i> المبلغ الذي تريده</label>
-                    <input list="number" id="Requestedamount" name="Requested amount" maxlength="6" class="form-control form-control-input" placeholder="ادخل المبلغ المطلوب"  />
+                    <input type="number" id="Requestedamount" name="Requested amount" maxlength="6" class="form-control form-control-input" placeholder="ادخل المبلغ المطلوب"  />
            
                 </div>
 
@@ -151,11 +291,10 @@
                 <div class="form-group">
                 
                     <label for="Waleet"><i class="fa-solid fa-user-pen"></i> اختر رقم المحفظة </label>
-                    <input list="suggestions3" id="Waleet" name="Number Wallet"  class="form-control form-control-input" placeholder="   اختر رقم المخفظة"  />
                     
-                    <datalist id="suggestions3" class="phones_agent">
-
-                    </datalist>
+                    <select id="Waleet" name="Number Wallet" class="form-control form-control-input phones_agent">
+                        <option value="" disabled selected> Number Wallet  </option>
+                    </select>
            
            
                 </div>
@@ -182,29 +321,21 @@
 
 
     <script>
-            
-    </script>
 
-    <script>
-function toggleInputs() {
-  var inputContainer = document.getElementById('inputContainer');
+
+function toggleInputs( id_Dev , id_checkbox , clas_inp1 , clas_inp2 ) {
+  var inputContainer = document.getElementById(`${id_Dev}`);
+
+  var inp11 = document.getElementById(`${clas_inp1}`)
+  var inp22 = document.getElementById(`${clas_inp2}`)
   
-  if (document.getElementById('toggleCheckbox').checked) {
+  if (document.getElementById(`${id_checkbox}`).checked) {
     inputContainer.classList.add('show');
   } else {
     inputContainer.classList.remove('show');
-  }
-}
 
-function toggleInputs2() {
-  var inputContainer2 = document.getElementById('inputContainer2');
-
-  var inputContainer2 = document.getElementById('inputContainer2');
-  
-  if (document.getElementById('toggleCheckbox2').checked) {
-    inputContainer2.classList.add('show');
-  } else {
-    inputContainer2.classList.remove('show');
+    inp11.value = ""
+    inp22.value = ""
   }
 }
 

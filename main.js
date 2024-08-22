@@ -6,24 +6,18 @@ fetch('data.json')
     .then(data => {
 
         
-        let list_Name_Agent = document.querySelector(".name_Agent1")
-        let list_Name_Agent2 = document.querySelector(".name_Agent2")
+        let list_Name_Agent = document.querySelectorAll(".name_Agent1")
+
    
+        list_Name_Agent.forEach(slct =>{
+            data.forEach(agent => {
+                slct.innerHTML += `
+                <option value="${agent.name}">${agent.name}</option>
+                `
+            });
+        })
 
-        data.forEach(agent => {
-            list_Name_Agent.innerHTML += `
 
-            <option value="${agent.name}">
-
-            `
-
-
-            list_Name_Agent2.innerHTML += `
-
-            <option value="${agent.name}">
-
-            `
-        });
 
 
         // add phones to input by name 
@@ -52,22 +46,23 @@ fetch('data.json')
 
                 password_agent = agent.passowrd;
 
-                console.log(password_agent);
                 
                 
-                const phone1 = agent.phone1 ? ` <option value="${agent.phone1}"> ` : "";
+                const phone1 = agent.phone1 ? `<option value="${agent.phone1}">${agent.phone1}</option> ` : "";
 
-                const phone2 = agent.phone2 ? ` <option value="${agent.phone2}"> ` : "";
+                const phone2 = agent.phone2 ? `<option value="${agent.phone2}">${agent.phone2}</option> ` : "";
 
-                const phone3 = agent.phone3 ? ` <option value="${agent.phone3}"> ` : "";
+                const phone3 = agent.phone3 ? `<option value="${agent.phone3}">${agent.phone3}</option> ` : "";
 
-                const phone4 = agent.phone4 ? ` <option value="${agent.phone4}"> ` : "";
+                const phone4 = agent.phone4 ? `<option value="${agent.phone4}">${agent.phone4}</option> ` : "";
 
-                const phone5 = agent.phone5 ? ` <option value="${agent.phone5}"> ` : "";
+                const phone5 = agent.phone5 ? `<option value="${agent.phone5}">${agent.phone5}</option> ` : "";
 
 
 
                 list_Phones.innerHTML = `
+
+                                <option value="" disabled selected>  Number Wallet  </option>
                     ${phone1}
                     ${phone2}
                     ${phone3}
@@ -93,7 +88,7 @@ fetch('data.json')
 
     let password_input = document.querySelector(".password_inp")
 
-    const scriptURL = "http://script.google.com/macros/s/AKfycbzgdteEYdJzMQKPzaa28Jp9S5cgyXWeQNZBn1w5pWJUccQ7kJUA66AC7RaDF2CEDYVH/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzeUt4evsgLprjFmoUUBmOmn00YYxT7PWSqlcmac_xsPRuQ4G1GNWh7EhUkLFBRa40ZJg/exec";
             let form = document.forms["contact-form"];
 
             let btn_subm = document.getElementById("submitBtn")
@@ -103,8 +98,19 @@ fetch('data.json')
                
                 if (password_agent && password_agent == password_input.value) {
                
-
-                    console.log(password_agent);
+                    btn_subm.classList.add("disable")
+                    btn_subm.innerHTML = `
+                    <div class="dot-spinner">
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+</div>
+                    `
                     
 
 fetch(scriptURL, {
